@@ -1,5 +1,10 @@
 package com.example.orderservice;
 
+import com.example.orderservice.entities.Order;
+import com.example.orderservice.entities.ProductItem;
+import com.example.orderservice.enums.OrderStatus;
+import com.example.orderservice.model.Customer;
+import com.example.orderservice.model.Product;
 import com.example.orderservice.repository.OrderRepository;
 import com.example.orderservice.repository.ProductItemRepository;
 import com.example.orderservice.services.CustomerRestClient;
@@ -9,6 +14,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 @SpringBootApplication
 @EnableFeignClients
@@ -23,6 +32,32 @@ public class OrderServiceApplication {
 							ProductItemRepository productItemRepository,
 							CustomerRestClient customerRestClient,
 							InventoryRestClient inventoryRestClient){
+		return args -> {
+			List<Customer> customers=customerRestClient.allCustomers().getContent().stream().toList();
+			List<Product> products=inventoryRestClient.allProducts().getContent().stream().toList();
+			Long customerId=1L;
+			Random random=new Random();
+			for (int i = 0; i < 20; i++) {
+				Order order=Order.builder()
+						.CustomerId(customers.get(random.nextInt(customers.size())).getId())
+						.status(Math.random()>0.5? OrderStatus.PENDING:OrderStatus.CREATED)
+						.createdAt(new Date())
+						.build();
+				Order savedOrder=orderRepository.save(order);
+				for (int j = 0; j < products.size(); j++) {
+					if (Math.random()>0.70){
+						ProductItem productItem=ProductItem.builder()
+								.order(savedOrder)
+								.productId(products.get(j).getId())
+								.price(products.get(j).getPrice())
+								.quantity(1+random.nextInt(10))
+								.discount(Math.random())
+								.build();
+						productItemRepository.save(productItem);
+					}
+				}
+			}
+		};
 
 	}
 
