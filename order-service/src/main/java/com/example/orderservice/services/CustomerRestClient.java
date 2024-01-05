@@ -11,7 +11,7 @@ import java.util.List;
 //Quand j'appel l'une de ces methodes, envoie une requette vers le service customer
 @FeignClient(name = "customer-service")
 public interface CustomerRestClient {
-    @GetMapping("/customer/{id}?projection=fullCustomer")
+    @GetMapping("/customers/{id}?projection=fullCustomer")
     public Customer customerById(@PathVariable Long id);
 
     @GetMapping("/customers?projection=fullCustomer")

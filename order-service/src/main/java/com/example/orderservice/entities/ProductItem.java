@@ -1,6 +1,7 @@
 package com.example.orderservice.entities;
 
 import com.example.orderservice.model.Product;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,5 +19,6 @@ public class ProductItem {
     private int quantity;
     private double discount;
     @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Order order;
 }

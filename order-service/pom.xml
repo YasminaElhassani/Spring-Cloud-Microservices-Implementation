@@ -63,6 +63,7 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.hateoas/spring-hateoas -->
 		<dependency>
 			<groupId>org.springframework.hateoas</groupId>

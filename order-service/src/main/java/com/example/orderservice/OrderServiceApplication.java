@@ -28,15 +28,17 @@ public class OrderServiceApplication {
 	}
 
 	@Bean
-	CommandLineRunner start(OrderRepository orderRepository,
-							ProductItemRepository productItemRepository,
-							CustomerRestClient customerRestClient,
-							InventoryRestClient inventoryRestClient){
+	CommandLineRunner start(
+			OrderRepository orderRepository,
+			ProductItemRepository productItemRepository,
+			CustomerRestClient customerRestClient,
+			InventoryRestClient inventoryRestClient){
 		return args -> {
 			List<Customer> customers=customerRestClient.allCustomers().getContent().stream().toList();
 			List<Product> products=inventoryRestClient.allProducts().getContent().stream().toList();
 			Long customerId=1L;
 			Random random=new Random();
+			Customer customer=customerRestClient.customerById(customerId);
 			for (int i = 0; i < 20; i++) {
 				Order order=Order.builder()
 						.CustomerId(customers.get(random.nextInt(customers.size())).getId())
