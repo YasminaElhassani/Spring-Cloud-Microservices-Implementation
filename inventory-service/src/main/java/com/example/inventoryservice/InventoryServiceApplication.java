@@ -23,7 +23,7 @@ public class InventoryServiceApplication {
 	CommandLineRunner start(ProductRepository productRepository){
 		return args -> {
 			Random random=new Random();
-			for (int i=1; i<100; i++){
+			for (int i=1; i<5; i++){
 				productRepository.saveAll(List.of(
 						Product.builder()
 								.name("Computer"+i)
