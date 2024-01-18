@@ -5,7 +5,7 @@ The purpose of this project is to build an application using Spring Cloud micros
 
 
 
-## 1. DISCOVERY SERVICE:
+### 1. DISCOVERY SERVICE:
 
 For the discovery service, we have the option to use either Consul or Eureka service to store information about microservices. In this project, we opted for Consul service.
    
@@ -13,7 +13,7 @@ For the discovery service, we have the option to use either Consul or Eureka ser
 
 ![cap1](https://github.com/YasminaElhassani/Spring-Cloud-Microservices_With-Angular/assets/103280152/a98189ee-f164-4d87-803f-c13f0b231112)
 
-## CONFIG-SERVICE
+### CONFIG-SERVICE
 
 There are two ways to handle configuration. We can either utilize the config service, storing configurations for all microservices in a file called application.properties, or we can employ the discovery service.
 
@@ -25,25 +25,25 @@ There are two ways to handle configuration. We can either utilize the config ser
 
 ![config with consul](https://github.com/YasminaElhassani/Spring-Cloud-Microservices_With-Angular/assets/103280152/3f9c5416-dbd0-4874-9c2b-67109c14ccda)
 
-## GATEWAY-SERVICE
+### GATEWAY-SERVICE
 
 We can access the services through the gateway.
 
 ![gitway](https://github.com/YasminaElhassani/Spring-Cloud-Microservices_With-Angular/assets/103280152/c781e148-b33c-435b-8278-8926155f386b)
 
-# CUSTOMER-SERVICE:
+### CUSTOMER-SERVICE:
 
 ![cutomer](https://github.com/YasminaElhassani/Spring-Cloud-Microservices_With-Angular/assets/103280152/98eca5e0-414d-46b8-8b35-f1426dc19da7)
 
-# INVENTORY-SERVICE:
+### INVENTORY-SERVICE:
 
 ![inventory-test-](https://github.com/YasminaElhassani/Spring-Cloud-Microservices_With-Angular/assets/103280152/e0e67b97-ce15-486c-9ca6-daa16e5d111c)
 
-# ORDER-SERVICE:
+### ORDER-SERVICE:
 
 ![order](https://github.com/YasminaElhassani/Spring-Cloud-Microservices_With-Angular/assets/103280152/106d4acf-d907-4187-8ada-3ece625ab511)
 
-# BILLIG-SERVICE:
+### BILLIG-SERVICE:
 
 We configured the billing service using the second method of configuration, which involves utilizing the Consul service. Additionally, we set up the sharing of secrets using Vault
 
