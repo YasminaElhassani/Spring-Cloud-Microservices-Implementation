@@ -1,5 +1,5 @@
 # Compte rendu : 
-## Implementing Spring Cloud microservices with Consul Discovery, Spring Cloud Config, and Spring Cloud Gateway, complemented by an Angular front-end.
+#### Implementing Spring Cloud microservices with Consul Discovery, Spring Cloud Config, and Spring Cloud Gateway, complemented by an Angular front-end.
 
 The purpose of this project is to build an application using Spring Cloud microservices. We'll leverage Consul Discovery, Spring Cloud Config, and Spring Cloud Gateway to enhance the functionality. To make it user-friendly, we'll also implement an Angular front-end.
 
