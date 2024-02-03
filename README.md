@@ -2,8 +2,15 @@
 
 Implementing Spring Cloud microservices with Consul Discovery, Spring Cloud Config, and Spring Cloud Gateway, complemented by an Angular front-end.
 
+## Micro-services Architechture:
+
+![software architecture_micro_services](https://github.com/YasminaElhassani/Spring-Cloud-Microservices_With-Angular/assets/103280152/4ea0827f-8226-4eee-a179-d30ae3f4ec56)
+
 The purpose of this project is to build an application using Spring Cloud microservices. We'll leverage Consul Discovery, Spring Cloud Config, and Spring Cloud Gateway to enhance the functionality. To make it user-friendly, we'll also implement an Angular front-end.
 
+## Project Architechture:
+
+![architechture projet_micro_services](https://github.com/YasminaElhassani/Spring-Cloud-Microservices_With-Angular/assets/103280152/cb993217-a0fc-4907-a9da-4564c9c82f57)
 
 
 ## 1. DISCOVERY SERVICE:
